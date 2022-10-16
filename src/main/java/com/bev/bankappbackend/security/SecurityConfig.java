@@ -16,7 +16,7 @@ public class SecurityConfig {
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
+                .antMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards","/user").authenticated()
                 .antMatchers("/notices", "/contact","/register").permitAll()
                 .and().formLogin()
                 .and().httpBasic();
